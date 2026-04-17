@@ -5,6 +5,8 @@ import sqlite3
 DB_PATH = os.path.join(os.path.dirname(__file__), "expenses.db")
 CATEGORIES_PATH = os.path.join(os.path.dirname(__file__), "categories.json")
 
+os.chmod("expenses.db", 0o644)
+
 mcp = FastMCP("ExpenseTracker")
 
 def init_db():
