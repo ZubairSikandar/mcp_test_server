@@ -15,9 +15,10 @@ def init_db():
                 date TEXT NOT NULL,
                 amount REAL NOT NULL,
                 category TEXT NOT NULL,
-                subcategory TEXT DEFAULT '')
+                subcategory TEXT DEFAULT '',
+                note TEXT DEFAULT ''
+            )
         """)
-
 
 init_db()
 
@@ -77,4 +78,4 @@ def categories():
         return f.read()
 
 if __name__ == "__main__":
-    mcp.run()
+    mcp.run(transport="http", host="0.0.0.0",port=8020)
